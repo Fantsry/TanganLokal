@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masuk | TanganLokal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'tangan-cream': '#f5e6d3',
+              'tangan-header': '#f1d7b8',
+              'tangan-brown': '#8d7267',
+              'tangan-dark-brown': '#6e574c',
+              'tangan-text': '#4a3728',
+              'tangan-orange': '#d19c68',
+              'tangan-button': '#8d7267',
+              'tangan-feature': '#a88574',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-tangan-cream min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-6xl flex rounded-lg overflow-hidden shadow-lg">
+      <!-- Kiri-->
+      <div class="w-1/2 flex flex-col items-center justify-center p-10">
+        <img src="/img/daftar1.png"class="mb-6" />
+        <h2 class="text-xl font-semibold text-tangan-text mb-1">Selamat Datang di TanganLokal</h2>
+        <p class="text-tangan-brown italic">Masuk dan Belanja Produk Lokal Disini</p>
+      </div>
+
+      <!-- Kanan-->
+      <div class="w-1/2 bg-tangan-brown p-10 rounded-l-3xl">
+        <h2 class="text-white text-2xl font-bold mb-2">Masuk</h2>
+        <p class="text-tangan-header text-sm mb-6">
+          Belum Punya Akun? 
+          <a href="daftar.html" class="underline font-medium text-tangan-header">Daftar</a>
+        </p>
+
+        <input
+          type="email"
+          placeholder="Email"
+          class="w-full p-3 mb-4 rounded-md bg-white text-tangan-dark-brown"
+        />
+        <div class="relative mb-4">
+          <input
+            type="password"
+            placeholder="Password"
+            class="w-full p-3 rounded-md bg-white text-tangan-dark-brown"
+          />
+        
+          <span class="absolute right-3 top-3 text-tangan-dark-brown cursor-pointer"></span>
+        </div>
+
+        <div class="flex items-center justify-between text-sm text-white mb-4">
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" checked class="bg-tangan-orange" />
+            <span>Ingat Saya</span>
+          </label>
+          <a href="lupasandi.html" class="underline text-white">Lupa Kata Sandi?</a>
+        </div>
+        
+        <a href="home.html">
+        <button class="w-full bg-tangan-header text-tangan-text font-semibold py-3 rounded-md hover:bg-tangan-orange transition">
+          Masuk
+        </button>
+      </a>
+
+        <div class="flex items-center justify-center my-4">
+          <div class="flex-grow h-px bg-tangan-feature"></div>
+          <span class="mx-2 text-sm text-tangan-header">atau daftar dengan</span>
+          <div class="flex-grow h-px bg-tangan-feature"></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <!-- Google -->
+          <button class="flex items-center justify-center gap-2 py-2 rounded-md bg-white text-tangan-brown shadow-sm">
+            <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" />
+            Google
+          </button>
+
+          <!-- Facebook -->
+          <button class="flex items-center justify-center gap-2 py-2 rounded-md bg-tangan-feature text-white shadow-sm">
+            <img src="/img/facebook.png" alt="" class="w-5 h-5">
+            Facebook
+          </button>
+
+          <!-- Phone -->
+          <button class="flex items-center justify-center gap-2 py-2 rounded-md bg-tangan-feature text-white shadow-sm">
+            <img src="/img/handphone.png" alt="" class="w-5 h-5">Handphone
+          </button>
+
+          <!-- Yahoo -->
+          <button class="flex items-center justify-center gap-2 py-2 rounded-md bg-tangan-feature text-purple-600 font-semibold shadow-sm">
+            <img src="/img/yahoo.png" alt="" class="w-5 h-5">Yahoo
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

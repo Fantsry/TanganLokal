@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'tangan-cream': '#f5e6d3',
+              'tangan-header': '#f1d7b8',
+              'tangan-brown': '#8d7267',
+              'tangan-dark-brown': '#6e574c',
+              'tangan-text': '#4a3728',
+              'tangan-orange': '#d19c68',
+              'tangan-button': '#8d7267',
+              'tangan-feature': '#a88574',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-tangan-cream min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-6xl bg-tangan-cream flex rounded-lg overflow-hidden shadow-lg">
+      <!-- Kiri -->
+      <div class="w-1/2 flex items-center justify-center p-10">
+        <div class="text-center">
+          <img src="/img/daftar1.png" alt="Shopping Illustration" class="mb-6" />
+          <h2 class="text-xl font-semibold text-tangan-text mb-2">Jual Beli Mudah Hanya Di TanganLokal</h2>
+          <p class="text-tangan-brown italic">Gabung dan rasakan bertransaksi di TanganLokal!</p>
+        </div>
+      </div>
+
+      <!-- Kanan -->
+      <div class="w-1/2 bg-tangan-brown p-10 rounded-l-3xl">
+        <h2 class="text-white text-2xl font-bold mb-2">Daftar Sekarang</h2>
+        <p class="text-tangan-header mb-6 text-sm">
+          Sudah punya akun TanganLokal? 
+          <a href="login.html" class="underline text-tangan-header font-medium">Masuk</a>
+        </p>
+<!-- Daftar -->
+        <div class="flex space-x-4 mb-6">
+          <button class="flex-1 py-2 bg-white text-tangan-brown rounded-md font-medium shadow-sm flex items-center justify-center">
+            <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5 mr-2"/>
+            Google
+          </button>
+          <button class="flex-1 py-2 bg-tangan-feature text-white rounded-md font-medium shadow-sm flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 5.02 3.66 9.18 8.44 9.92v-7.02h-2.54V12h2.54V9.79c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.47H15.9c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.97h-2.34v7.02C18.34 21.25 22 17.09 22 12.07z"/></svg>
+            Facebook
+          </button>
+        </div>
+
+        <div class="flex items-center justify-center mb-4">
+          <div class="flex-grow h-px bg-tangan-feature"></div>
+          <span class="mx-2 text-sm text-tangan-header">atau daftar dengan</span>
+          <div class="flex-grow h-px bg-tangan-feature"></div>
+        </div>
+
+        <input
+          type="text"
+          placeholder="Nomor Ponsel atau Email"
+          class="w-full p-3 rounded-md bg-white text-tangan-dark-brown mb-4 focus:outline-none focus:ring-2 focus:ring-tangan-orange"
+        />
+
+        <a href="home.html">
+        <button class="w-full bg-tangan-header text-tangan-text font-semibold py-3 rounded-md hover:bg-tangan-orange transition">
+          Daftar
+        </button>
+      </a>
+
+        <p class="text-xs text-tangan-header mt-4 text-center">
+          Dengan mendaftar, saya menyetujui 
+          <a href="#" class="underline font-medium">Syarat dan Ketentuan</a> serta 
+          <a href="#" class="underline font-medium">Kebijakan Privasi</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

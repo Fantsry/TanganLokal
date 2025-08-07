@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TanganLokal - Marketplace Produk Lokal Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Allura&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="input.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tangan-cream': '#f5e6d3',
+                        'tangan-header': '#f1d7b8',
+                        'tangan-brown': '#8d7267',
+                        'tangan-dark-brown': '#6e574c',
+                        'tangan-text': '#4a3728',
+                        'tangan-orange': '#d19c68',
+                        'tangan-button': '#8d7267',
+                        'tangan-feature': '#a88574',
+                    },
+                    fontFamily: {
+                        acme: ['Acme', 'sans-serif'],
+                        allura: ['Allura', 'cursive'],
+                        pacifico: ['Pacifico', 'cursive'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-tangan-cream">
+
+    <!-- Navbar -->
+    <header class="bg-tangan-header sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center py-2 px-4">
+            <div class="flex items-center space-x-2">
+                <a href="home.html" class="">
+                    <div class="text-xl font-bold text-tangan-text">
+                        <span>Tangan</span><span class="font-pacifico">Lokal</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div id="search-container" class="flex-grow mx-4 relative">
+                <div class="relative">
+                    <input id="search-input" type="text" placeholder="Cari di TanganLokal" 
+                           class="w-full py-1 px-4 rounded-full border border-tangan-brown focus:ring-2 focus:ring-tangan-orange focus:border-transparent">
+                    <i class="fas fa-search absolute right-3 top-2 text-gray-400"></i>
+                </div>
+                
+                <div id="search-results" class="hidden absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg max-h-80 overflow-y-auto z-50">
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-tangan-text relative" onclick="toggleCartModal(event)">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span id="cart-badge" class="cart-badge hidden">0</span>
+                </a>
+                
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                    <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-10 h-10 rounded-full" src="/img/profile.jpeg" alt="user photo">
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div class="z-50 hidden my-4 text-base list-none bg-tangan-cream divide-y divide-gray-100 rounded-lg shadow-sm" id="user-dropdown">
+                        <div class="px-4 py-3">
+                            <span class="block text-sm text-gray-900">Rega Syakib Ramadhan</span>
+                            <span class="block text-sm text-gray-500 truncate">rega@gmail.com</span>
+                        </div>
+                        <ul class="py-2" aria-labelledby="user-menu-button">
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tangan-orange">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="settings/profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tangan-orange">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tangan-orange">Earnings</a>
+                            </li>
+                            <li>
+                                <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tangan-orange">Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Modal keranjang -->
+    <div id="cart-modal" class="hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white w-full max-w-md p-4 rounded-lg shadow-lg relative">
+            <button onclick="toggleCartModal(event)" class="absolute top-2 right-3 text-gray-600 hover:text-red-500 text-xl">&times;</button>
+            <h2 class="text-xl font-bold mb-4 text-tangan-text">Keranjang Saya</h2>
+            <ul id="cart-items" class="space-y-2 max-h-60 overflow-y-auto pr-2">
+                <!-- Item keranjang akan muncul di sini -->
+            </ul>
+            <div class="mt-4 border-t pt-2 text-right">
+                <span class="text-tangan-text font-semibold">Total: Rp <span id="cart-total">0</span></span>
+            </div>
+            <a href="checkout.html" class="w-full bg-tangan-button text-white py-2 rounded-lg hover:bg-tangan-dark-brown transition-colors mt-4 block text-center">
+                Checkout
+            </a>
+        </div>
+    </div>
+    
+    <!-- Popup -->
+    <div id="toast" class="hidden fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg transition-opacity duration-300">
+        Sudah masuk ke keranjang!
+    </div>
+
+    <!-- Wayang -->
+    <section class="container mx-auto px-4 my-6">
+        <div class="bg-tangan-brown rounded-full flex overflow-hidden">
+            <div class="w-1/2">
+                <img src="/img/wayangemasjawa.png" alt="Wayang Indonesia" class="h-full w-full object-cover">
+            </div>
+            <div class="w-1/2 p-6 text-white">
+                <h2 class="text-5xl font-allura mb-2">Wayang Indonesia</h2>
+                <p class="mb-6">Ditinjau dari sejarah yang ada, asal usul wayang dianggap telah hadir semenjak 1500 tahun sebelum Masehi. Wayang lahir dari para cendikia nenek moyang suku Jawa di masa silam. Dan sekarang masih sering diperagakan di desa-desa di pulau jawa untuk menghibur masyarakat. </p>
+                <a href="https://id.wikipedia.org/wiki/Wayang"><button class="bg-white text-tangan-text px-6 py-2 rounded font-medium hover:bg-gray-100 transition-colors">MULAI MELIHAT</button></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-tangan-cream py-6 px-4 space-y-10">
+        <div>
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-tangan-text text-lg font-semibold">Berdasarkan pencarianmu</h2>
+                <a class="text-sm text-tangan-orange font-medium hover:underline">Lihat Semua</a>
+            </div>
+            <div id="product-grid-pencarian" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"></div>
+        </div>
+        
+        <div>
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-tangan-text text-lg font-semibold">Sports</h2>
+                <a class="text-sm text-tangan-orange font-medium hover:underline">Lihat Semua</a>
+            </div>
+            <div id="product-grid-sports" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"></div>
+        </div>
+        
+        <div>
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-tangan-text text-lg font-semibold">Elektronik</h2>
+                <a class="text-sm text-tangan-orange font-medium hover:underline">Lihat Semua</a>
+            </div>
+            <div id="product-grid-elektronik" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"></div>
+        </div>
+    </div>
+
+    <!-- jual dsni  -->
+    <section class="container mx-auto px-4 mb-12">
+        <div class="bg-tangan-header/70 rounded-lg p-6">
+            <div class="text-center mb-2">
+                <p class="text-tangan-text">Punya Produk Lokal? Buka cabangnya di TanganLokal</p>
+                <p class="text-tangan-text text-sm">Mudah dan<span class="font-bold"> GRATIS</span></p>
+            </div>
+            <div class="flex justify-center">
+                <button class="bg-tangan-button text-white text-sm py-2 px-6 rounded-lg">
+                    Buka Cabang
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-tangan-header py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h3 class="text-tangan-text font-bold mb-4">TanganLokal</h3>
+                    <ul class="text-sm text-tangan-dark-brown space-y-2">
+                        <li><a href="#" class="hover:underline">Tentang TanganLokal</a></li>
+                        <li><a href="#" class="hover:underline">Blog</a></li>
+                        <li><a href="#" class="hover:underline">Kebijakan</a></li>
+                        <li><a href="#" class="hover:underline">Mitra Kami</a></li>
+                        <li><a href="#" class="hover:underline">Promo Gudang</a></li>
+                    </ul>
+                </div>
+                
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h3 class="text-tangan-text font-bold mb-4">Bantuan dan Panduan</h3>
+                    <ul class="text-sm text-tangan-dark-brown space-y-2">
+                        <li><a href="#" class="hover:underline">Syarat dan Ketentuan</a></li>
+                        <li><a href="#" class="hover:underline">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:underline">Pertanyaan Toko</a></li>
+                    </ul>
+                </div>
+                
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h3 class="text-tangan-text font-bold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-tangan-dark-brown hover:text-tangan-text">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-tangan-dark-brown hover:text-tangan-text">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a> 
+                        <a href="#" class="text-tangan-dark-brown hover:text-tangan-text">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/4">
+                    <img src="/img/ilustrasi.png" alt="ilustrasi" class="max-w-full">
+                </div>
+            </div>
+            
+            <div class="mt-8 border-t border-tangan-orange/30 pt-4">
+                <div class="flex flex-wrap justify-between items-center">
+                    <div class="text-xs text-tangan-dark-brown">
+                        &copy; 2025 , PT. TanganLokal
+                    </div>
+                    <div class="flex space-x-2">
+                        <a href="#"><img src="/img/goggleplay.png" alt="Google Play" class="h-14"></a>
+                        <a href="#"><img src="/img/apple-removebg-preview.png" alt="App Store" class="h-16"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+ <script src="script.js"></script>
+</body>
+</html>

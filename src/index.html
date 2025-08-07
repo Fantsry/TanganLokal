@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TanganLokal - Marketplace Produk Lokal Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Allura&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+<link href="./output.css" rel="stylesheet">
+<script src="tailwind.config.js"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'tangan-cream': '#f5e6d3',
+                    'tangan-header': '#f1d7b8',
+                    'tangan-brown': '#8d7267',
+                    'tangan-dark-brown': '#6e574c',
+                    'tangan-text': '#4a3728',
+                    'tangan-orange': '#d19c68',
+                    'tangan-button': '#8d7267',
+                    'tangan-feature': '#a88574',
+                },
+                fontFamily: {
+                    acme: ['Acme', 'sans-serif'],
+                    allura: ['Allura', 'cursive'],
+                    pacifico: ['Pacifico', 'cursive'],
+                },
+            },
+        },
+    };
+</script>
+
+
+</head>
+<body class="bg-tangan-cream">
+
+    <!-- Navbar -->
+    <header class="bg-tangan-header p-3 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="text-xl font-bold text-tangan-text">
+                    <span>Tangan</span><span class="font-pacifico">Lokal</span>
+                </div>
+            </div>
+            
+            <div id="search-container" class="flex-grow mx-4 relative">
+                <div class="relative">
+                    <input id="search-input" type="text" placeholder="Cari di TanganLokal" 
+                           class="w-full py-1 px-4 rounded-full border border-tangan-brown focus:ring-2 focus:ring-tangan-orange focus:border-transparent">
+                    <i class="fas fa-search absolute right-3 top-2 text-gray-400"></i>
+                </div>
+                
+                <div id="search-results" class="hidden absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg max-h-80 overflow-y-auto z-50">
+                    
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-tangan-text">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                </a>
+                
+                <div class="flex items-center">
+                    <div class="bg-orange-100 rounded px-3 py-1 flex items-center space-x-2">
+                        <a href="daftar.html" class="text-tangan-dark-brown font-medium cursor-pointer">Daftar</span>
+                        I
+                        <div class="flex items-center text-blue-500">
+                            
+                            <a href="login.html" class="text-tangan-dark-brown font-medium cursor-pointer">Masuk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section class="container mx-auto px-4 my-6">
+        <div class="bg-tangan-brown rounded-full flex overflow-hidden">
+            <div class="w-1/2">
+                <img src="/img/wayangemasjawa.png" alt="Wayang Indonesia" class="h-full w-full object-cover">
+            </div>
+            <div class="w-1/2 p-6 text-white">
+                <h2 class="text-5xl font-allura mb-2">Wayang Indonesia</h2>
+                <p class="mb-6">Ditinjau dari sejarah yang ada, asal usul wayang dianggap telah hadir semenjak 1500 tahun sebelum Masehi. Wayang lahir dari para cendikia nenek moyang suku Jawa di masa silam. Dan sekarang masih sering diperagakan di desa-desa di pulau jawa untuk menghibur masyarakat. </p>
+                <a href="https://id.wikipedia.org/wiki/Wayang"><button class="bg-white text-tangan-text px-6 py-2 rounded font-medium hover:bg-gray-100 transition-colors">MULAI MELIHAT</button></a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container mx-auto px-4 my-12 text-center">
+        <h2 class="text-3xl font-bold mb-6 text-tangan-text">Kenapa harus <span class="text-tangan-brown">TanganLokal</span>?</h2>
+        
+        <div class="max-w-3xl mx-auto mb-12">  
+            <p class="text-tangan-text">
+                TanganLokal adalah platform jual beli online yang memungkinkan anda untuk membeli dan menjual barang-barang yang unik dan khas dari Indonesia. Dengan TanganLokal, anda dapat menemukan barang -barang yang tidak akan anda temukan di tempat lain.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div class="bg-tangan-feature rounded-xl p-6 text-left">
+                <div class="flex justify-center mb-4">
+                    <div class="bg-tangan-cream p-2 rounded-full">
+                        <i class="fas fa-map-marker-alt text-tangan-feature text-xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Tersedia berbagai produk Indonesia</h3>
+                <p class="text-tangan-cream text-sm">TanganLokal mempersihkan berbagai produk tradisional dan budaya Indonesia untuk kebutuhan sehari-hari tanpa batas daerah manapun.</p>
+            </div>
+            
+
+            <div class="bg-tangan-feature rounded-xl p-6 text-left">
+                <div class="flex justify-center mb-4">
+                    <div class="bg-tangan-cream p-2 rounded-full">
+                        <i class="fas fa-store text-tangan-feature text-xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Dapatkan Karya Lokal ke Seluruh Indonesia</h3>
+                <p class="text-tangan-cream text-sm">Gratis ongkos kirimkan pesanan, paket dan Gadai dari berbagai daerah agar produk nusantara terjangkau.</p>
+            </div>
+            
+            
+
+            <div class="bg-tangan-feature rounded-xl p-6 text-left">
+                <div class="flex justify-center mb-4">
+                    <div class="bg-tangan-cream p-2 rounded-full">
+                        <i class="fas fa-truck text-tangan-feature text-xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Produk Lokal Akses Nasional</h3>
+                <p class="text-tangan-cream text-sm">Distribusikan karya terbaik, produk dari Indonesia untuk seluruh warga anak bangsa.</p>
+            </div>
+        </div>
+    </section>
+
+<div class="h-1 bg-white w-full my-8"></div>
+
+
+    <section class="container mx-auto px-4 mb-8">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+    
+    
+    <button class="bg-tangan-button text-white py-4 px-4 rounded flex flex-col items-center">
+      <div class="w-8 h-1 bg-white mb-2"></div>
+      <span class="text-sm font-semibold">Cangkir</span>
+    </button>
+
+    
+    <button class="bg-tangan-button text-white py-4 px-4 rounded flex flex-col items-center">
+      <div class="w-8 h-1 bg-white mb-2"></div>
+      <span class="text-sm font-semibold">Mangkok</span>
+    </button>
+    <button class="bg-tangan-button text-white py-4 px-4 rounded flex flex-col items-center">
+      <div class="w-8 h-1 bg-white mb-2"></div>
+      <span class="text-sm font-semibold">Piring</span>
+    </button>
+
+    
+    <button class="bg-tangan-button text-white py-4 px-4 rounded flex flex-col items-center">
+      <div class="w-8 h-1 bg-white mb-2"></div>
+      <span class="text-sm font-semibold">Lainnya</span>
+    </button>
+
+  </div>
+        
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4" id="product-grid">
+            
+         
+
+            
+        </div>
+        
+        <div class="text-center my-8">
+            <button class="bg-tangan-button text-white px-6 py-2 rounded">Muat Lebih Banyak</button>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 mb-12">
+    <div class="bg-tangan-header/70 rounded-lg p-6">
+        <div class="text-center mb-2">
+            <p class="text-tangan-text">Punya Produk Lokal? Buka cabangnya di TanganLokal</p>
+            <p class="text-tangan-text text-sm">Mudah dan<span class="font-bold"> GRATIS</span></p>
+        </div>
+        <div class="flex justify-center">
+            <button class="bg-tangan-button text-white text-sm py-2 px-6 rounded-lg">
+                Buka Cabang
+            </button>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-tangan-header py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h3 class="text-tangan-text font-bold mb-4">TanganLokal</h3>
+                    <ul class="text-sm text-tangan-dark-brown space-y-2">
+                        <li><a href="#" class="hover:underline">Tentang TanganLokal</a></li>
+                        <li><a href="#" class="hover:underline">Blog</a></li>
+                        <li><a href="#" class="hover:underline">Kebijakan</a></li>
+                        <li><a href="#" class="hover:underline">Mitra Kami</a></li>
+                        <li><a href="#" class="hover:underline">Promo Gudang</a></li>
+                    </ul>
+                </div>
+                
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h3 class="text-tangan-text font-bold mb-4">Bantuan dan Panduan</h3>
+                    <ul class="text-sm text-tangan-dark-brown space-y-2">
+                        <li><a href="#" class="hover:underline">Syarat dan Ketentuan</a></li>
+                        <li><a href="#" class="hover:underline">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:underline">Pertanyaan Toko</a></li>
+                    </ul>
+                </div>
+                
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h3 class="text-tangan-text font-bold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-tangan-dark-brown hover:text-tangan-text">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-tangan-dark-brown hover:text-tangan-text">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a> 
+                        <a href="#" class="text-tangan-dark-brown hover:text-tangan-text">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/4">
+                    <img src="/img/ilustrasi.png" alt="ilustrasi" class="max-w-full">
+                </div>
+            </div>
+            
+            <div class="mt-8 border-t border-tangan-orange/30 pt-4">
+                <div class="flex flex-wrap justify-between items-center">
+                    <div class="text-xs text-tangan-dark-brown">
+                        &copy; 2025 , PT. TanganLokal
+                    </div>
+                    <div class="flex space-x-2">
+                        <a href="#"><img src="/img/goggleplay.png" alt="Google Play" class="h-14"></a>
+                        <a href="#"><img src="/img/apple-removebg-preview.png" alt="App Store" class="h-16"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    const productGrid = document.getElementById('product-grid');
+
+    fetch('https://fakestoreapi.com/products')
+        .then(res => res.json())
+        .then(products => {
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = "flex flex-col bg-white rounded-lg overflow-hidden shadow h-full";
+
+                productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.title}" class="w-full h-40 object-contain p-2 bg-white">
+            <div class="flex-grow p-2 bg-tangan-orange flex flex-col justify-between">
+            <hr class="border-t-2 border-white my-2" />
+            <p class="text-xs text-white">${product.title}</p>
+            <p class="font-bold text-tangan-text">Rp${(product.price * 15000).toLocaleString('id-ID')}</p>
+            <div class="flex items-center tangan-cream text-xs">
+            ${product.rating.rate}
+        </div>
+    </div>
+`;
+
+                productGrid.appendChild(productCard);
+            });
+        })
+        .catch(err => {
+            console.error('Fetch error:', err);
+        });
+</script>
+</body>
+</html>

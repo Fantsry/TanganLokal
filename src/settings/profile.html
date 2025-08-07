@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pengguna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tangan-cream': '#f5e6d3',
+                        'tangan-header': '#f1d7b8',
+                        'tangan-brown': '#8d7267',
+                        'tangan-dark-brown': '#6e574c',
+                        'tangan-text': '#4a3728',
+                        'tangan-orange': '#d19c68',
+                        'tangan-button': '#8d7267',
+                        'tangan-feature': '#a88574',
+                    },
+                    fontFamily: {
+                        acme: ['Acme', 'sans-serif'],
+                        allura: ['Allura', 'cursive'],
+                        pacifico: ['Pacifico', 'cursive'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-tangan-cream">
+    <!-- Navbar -->
+    <header class="bg-tangan-header sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="text-xl font-bold text-tangan-text">
+                    <a href="/src/home.html">
+                    <span>Tangan</span><span class="font-pacifico">Lokal</span>
+                </a>
+                </div>
+            </div>
+            
+            <div class="flex-grow mx-4">
+                <div class="relative">
+                    <input type="text" placeholder="Cari di TanganLokal" class="w-full py-1 px-4 rounded-full border border-gray-300">
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-tangan-text" onclick="toggleCartModal()">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                </a>
+                
+
+
+
+
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    
+    
+                </a>
+             
+                    <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                      <span class="sr-only">Open user menu</span>
+                      <img class="w-12 h-12 rounded-full" src="/img/profile.jpeg" alt="user photo">
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div class="z-50 hidden my-4 text-base list-none bg-tangan-cream divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+                      <div class="px-4 py-3">
+                        <span class="block text-sm text-gray-900 dark:text-white">Rega Syakib Ramadhan</span>
+                        <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">rega@gmail.com</span>
+                      </div>
+                      <ul class="py-2" aria-labelledby="user-menu-button">
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tangan-orange dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tangan-orange dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tangan-orange dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                        </li>
+                        <li>
+                          <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tangan-orange dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
+                  </button>
+                
+                
+            
+              
+                        </div>
+                    </div>
+    </header>
+    <!-- Container Utama -->
+    <div class="max-w-2xl mx-auto  rounded-xl shadow-lg overflow-hidden m-6">
+        <!-- Header Navigasi -->
+        <div class="p-4 border-b border-tangan-header">
+            <div class="flex space-x-12 text-tangan-brown text-base">
+                <a href="#" class="hover:text-tangan-orange">Daftar Alamat</a>
+                <a href="#" class="hover:text-tangan-orange">Pembayaran</a>
+                <a href="#" class="hover:text-tangan-orange">Notifikasi</a>
+                <a href="#" class="hover:text-tangan-orange">Mode Tampilan</a>
+                <a href="#" class="hover:text-tangan-orange">Keamanan</a>
+            </div>
+        </div>
+
+        <!-- Bagian Biodata -->
+        <div class="p-6">
+            <!-- Section Biodata Diri -->
+            <div class="mb-8">
+                <img class="w-16 h-16 rounded-full" src="/img/profile.jpeg" alt="user photo">
+                <h2 class="text-xl font-acme text-tangan-brown mb-4">Ubah Biodata diri</h2>
+                <div class="space-y-3">
+                    <!-- Baris Data -->
+                    <div class="grid grid-cols-3 items-center">
+                        <span class="text-tangan-text">Nama</span>
+                        <span class="text-tangan-dark-brown">Rega Syakib Ramadhan</span>
+                        <button class="text-tangan-orange hover:text-tangan-dark-brown text-sm">Ubah</button>
+                    </div>
+                    <div class="grid grid-cols-3 items-center">
+                        <span class="text-tangan-text">Tanggal Lahir</span>
+                        <span class="text-tangan-dark-brown">30 Juni 2009</span>
+                        <button class="text-tangan-orange hover:text-tangan-dark-brown text-sm">Ubah</button>
+                    </div>
+                    <div class="grid grid-cols-3 items-center">
+                        <span class="text-tangan-text">Jenis Kelamin</span>
+                        <span class="text-tangan-dark-brown">Laki-Laki</span>
+                        <button class="text-tangan-orange hover:text-tangan-dark-brown text-sm">Ubah</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Kontak -->
+            <div class="mb-8">
+                <h2 class="text-xl font-acme text-tangan-brown mb-4">Ubah Kontak</h2>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 items-center">
+                        <span class="text-tangan-text">Email</span>
+                        <span class="text-tangan-dark-brown">rega@gmail.com</span>
+                        <button class="text-tangan-orange hover:text-tangan-dark-brown text-sm">Ubah</button>
+                    </div>
+                    <div class="grid grid-cols-3 items-center">
+                        <span class="text-tangan-text">Nomor HP</span>
+                        <span class="text-tangan-dark-brown">08933326682</span>
+                        <button class="text-tangan-orange hover:text-tangan-dark-brown text-sm">Ubah</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Keamanan -->
+            <div class="border-t border-tangan-header pt-6">
+                <div class="space-y-4">
+                    <button class="w-full text-left py-2 px-4 text-tangan-brown hover:bg-tangan-cream rounded-lg">
+                        Setel PIN
+                    </button>
+                    <a href="/src/index.html">
+                    <button class="w-full text-left py-2 px-4 text-red-500 hover:bg-red-50 rounded-lg">
+                        Log Out
+                    </button>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/src/script.js"></script>
+</body>
+</html>
